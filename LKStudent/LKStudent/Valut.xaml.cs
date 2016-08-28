@@ -15,7 +15,7 @@ namespace LKStudent
         {
             InitializeComponent();
 
-            viewModel = new RateViewModel();
+            //viewModel = new RateViewModel("urlTemp1", "", "");
 
             this.BindingContext = viewModel;
         }

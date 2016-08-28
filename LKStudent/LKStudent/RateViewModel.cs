@@ -12,51 +12,23 @@ using Xamarin.Forms;
 
 namespace LKStudent
 {
-    public class RateViewModel : INotifyPropertyChanged
+    public class RateViewModel
     {
-        private decimal rate;
-        private decimal ask;
-        private decimal bid;
-
-        public decimal Rate
+       // public ICommand LoadDataCommand { protected set; get; }
+        private string url;
+        private string name;
+        public RateViewModel(string ulr_, string name_)
         {
-            get { return rate; }
-            private set
-            {
-                rate = value;
-                OnPropertyChanged("Rate");
-            }
-        }
-
-        public decimal Ask
-        {
-            get { return ask; }
-            private set
-            {
-                ask = value;
-                OnPropertyChanged("Ask");
-            }
-        }
-        public decimal Bid
-        {
-            get { return bid; }
-            private set
-            {
-                bid = value;
-                OnPropertyChanged("Bid");
-            }
-        }
-
-        public ICommand LoadDataCommand { protected set; get; }
-
-        public RateViewModel()
-        {
-            this.LoadDataCommand = new Command(LoadData);
+            url = ulr_;
+            name = name_;
+            //this.LoadDataCommand = new Command(LoadData);
+            LoadData();
         }
 
         private async void LoadData()
         {
-            string url = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+yahoo.finance.xchange+where+pair+=+%22USDRUB%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
+            //string url = "https://test-lks.volgatech.net/ExamList/ExamListCurrentJSON";
+            //string url = "https://query.yahooapis.com/v1/public/yql?q=select+*+from+yahoo.finance.xchange+where+pair+=+%22USDRUB%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
 
             try
             {
@@ -69,22 +41,16 @@ namespace LKStudent
                 var content = await response.Content.ReadAsStringAsync();
                 JObject o = JObject.Parse(content);
 
-                var str = o.SelectToken(@"$.query.results.rate");
-                var rateInfo = JsonConvert.DeserializeObject<RateInfo>(str.ToString());
+                var str = o.SelectToken(@"Model.[0]");
+               
 
-                this.Rate = rateInfo.Rate;
-                this.Ask = rateInfo.Ask;
-                this.Bid = rateInfo.Bid;
+                DependencyService.Get<ISaveAndLoad>().SaveText(name, str.ToString());
+               // string sToken = DependencyService.Get<ISaveAndLoad>().LoadText("temp3.json");
+
+                //var rateInfo = JsonConvert.DeserializeObject<ExamJS>(sToken);                
             }
             catch (Exception ex)
             { }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged(string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        }      
     }
 }

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LKStudent.ExamList"
+             BackgroundColor="White">
+  <ScrollView>
+    <StackLayout>
+      <Label Text="Мои экзамены"
+             HorizontalOptions="Center"
+             VerticalOptions="Start"
+             FontSize="20"
+             TextColor="Black"/>
+      <Picker x:Name="PickerSelectSemester"
+              BackgroundColor="Gray"
+              Title="Выберете семестр"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              SelectedIndexChanged="PickerSelectSemester_OnSelectedIndexChanged">
+        <Picker.Items>
+        </Picker.Items>
+      </Picker>
+      <StackLayout x:Name="ExamStack">
+      </StackLayout>
+
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

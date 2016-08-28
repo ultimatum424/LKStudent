@@ -8,14 +8,10 @@ namespace LKStudent
 {
     class ExamJS
     {
-        public decimal Model { get; set; }
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string SubjectName { get; set; }
+        public string subjectKafedra { get; set; }
         public string Kafedra { get; set; }
-        public int Room { get; set; }
-        public string Building { get; set; }
-        public string TeacherFIO { get; set; }
-        public DateTime Date { get; set; }
-
+        public string Location { get; set; }
+        public string FIO { get; set; }
     }
 }
