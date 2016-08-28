@@ -12,7 +12,7 @@ namespace LKStudent
     {
         RateViewModel viewModel;
         string url = "https://test-lks.volgatech.net/ExamList/ExamListCurrentJSON";
-        private string name = "js45.js";
+        private string name = "js414424255.js";
         public ExamList()
         {
 
@@ -46,8 +46,7 @@ namespace LKStudent
         }
 
         private void PickerSelectSemester_OnSelectedIndexChanged(object sender, EventArgs e)
-        {
-
+        {           
             ExamStack.Children.Clear();
             this.BindingContext = viewModel;
             string sToken = DependencyService.Get<ISaveAndLoad>().LoadText(name);
