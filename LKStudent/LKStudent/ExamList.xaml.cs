@@ -12,13 +12,13 @@ namespace LKStudent
     {
         RateViewModel viewModel;
         string url = "https://test-lks.volgatech.net/ExamList/ExamListCurrentJSON";
-        private string name = "js.js";
+        private string name = "js45.js";
         public ExamList()
         {
-            
-            
-            InitializeComponent();
+
             viewModel = new RateViewModel(url, name);
+            InitializeComponent();
+            
             PickerSelectSemester.Items.Add("1 семестр");
             PickerSelectSemester.Items.Add("2 семестр");
         }
@@ -47,11 +47,16 @@ namespace LKStudent
 
         private void PickerSelectSemester_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+
             ExamStack.Children.Clear();
             this.BindingContext = viewModel;
             string sToken = DependencyService.Get<ISaveAndLoad>().LoadText(name);
             var rateInfo = JsonConvert.DeserializeObject<ExamJS>(sToken);
             AddLabelExam(rateInfo.SubjectName, true);
+            AddLabelExam(rateInfo.subjectKafedra, false);
+            AddLabelExam(rateInfo.Location, false);
+            AddLabelExam(rateInfo.FIO, false);
+            AddLabelExam("", false);
         }
     }
 }
