@@ -12,9 +12,9 @@ using Xamarin.Forms;
 
 namespace LKStudent
 {
-    public class RateViewModel
+    public class GetJsToUrl
     {
-        public RateViewModel(string ulr_, string name_)
+        public GetJsToUrl(string ulr_, string name_)
         {          
             LoadData(ulr_, name_);
         }

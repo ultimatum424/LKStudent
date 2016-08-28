@@ -10,13 +10,13 @@ namespace LKStudent
 {
     public partial class ExamList : ContentPage
     {
-        RateViewModel viewModel;
+        GetJsToUrl jsToUrl;
         string url = "https://test-lks.volgatech.net/ExamList/ExamListCurrentJSON";
         private string name = "js414424255.js";
         public ExamList()
         {
 
-            viewModel = new RateViewModel(url, name);
+            jsToUrl = new GetJsToUrl(url, name);
             InitializeComponent();
             
             PickerSelectSemester.Items.Add("1 семестр");
@@ -48,7 +48,7 @@ namespace LKStudent
         private void PickerSelectSemester_OnSelectedIndexChanged(object sender, EventArgs e)
         {           
             ExamStack.Children.Clear();
-            this.BindingContext = viewModel;
+            this.BindingContext = jsToUrl;
             string sToken = DependencyService.Get<ISaveAndLoad>().LoadText(name);
             var rateInfo = JsonConvert.DeserializeObject<ListExamJs>(sToken);
             for (int i = 0; i < rateInfo.Model.Count; i++)
