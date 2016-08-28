@@ -32,8 +32,8 @@ namespace LKStudent
                 var content = await response.Content.ReadAsStringAsync();
                 JObject o = JObject.Parse(content);
 
-                var str = o.SelectToken(@"Model.[0]");
-                DependencyService.Get<ISaveAndLoad>().SaveText(name_, str.ToString());
+                //var str = o.SelectToken(@"Model.[0]");
+                DependencyService.Get<ISaveAndLoad>().SaveText(name_, o.ToString());
             }
             catch (Exception ex)
             { }

@@ -14,4 +14,9 @@ namespace LKStudent
         public string Location { get; set; }
         public string FIO { get; set; }
     }
+
+    class ListExamJs
+    {
+         public List<ExamJS> Model { get; set; }
+    }
 }

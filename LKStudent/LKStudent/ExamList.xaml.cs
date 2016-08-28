@@ -51,12 +51,16 @@ namespace LKStudent
             ExamStack.Children.Clear();
             this.BindingContext = viewModel;
             string sToken = DependencyService.Get<ISaveAndLoad>().LoadText(name);
-            var rateInfo = JsonConvert.DeserializeObject<ExamJS>(sToken);
-            AddLabelExam(rateInfo.SubjectName, true);
-            AddLabelExam(rateInfo.subjectKafedra, false);
-            AddLabelExam(rateInfo.Location, false);
-            AddLabelExam(rateInfo.FIO, false);
-            AddLabelExam("", false);
+            var rateInfo = JsonConvert.DeserializeObject<ListExamJs>(sToken);
+            for (int i = 0; i < rateInfo.Model.Count; i++)
+            {
+                AddLabelExam(rateInfo.Model[i].SubjectName, true);
+                AddLabelExam(rateInfo.Model[i].subjectKafedra, false);
+                AddLabelExam(rateInfo.Model[i].Location, false);
+                AddLabelExam(rateInfo.Model[i].FIO, false);
+                AddLabelExam("", false);
+            }
+            
         }
     }
 }
