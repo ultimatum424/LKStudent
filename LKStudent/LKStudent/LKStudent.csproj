@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AchievementData.cs" />
+    <Compile Include="AchievementsPage.xaml.cs">
+      <DependentUpon>AchievementsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.cs" />
     <Compile Include="ExamJS.cs" />
     <Compile Include="ExamList.xaml.cs">
@@ -63,11 +67,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="achievements.json" />
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ExamList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AchievementsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

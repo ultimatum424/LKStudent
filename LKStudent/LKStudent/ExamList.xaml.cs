@@ -59,7 +59,7 @@ namespace LKStudent
                 AddLabelExam(rateInfo.Model[i].FIO, false);
                 AddLabelExam("", false);
             }
-            
+
         }
     }
 }
