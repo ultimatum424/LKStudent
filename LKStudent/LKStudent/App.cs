@@ -12,8 +12,8 @@ namespace LKStudent
         public App()
         {
             // The root page of your application
-            MainPage = new ExamList();
-
+            //MainPage = new ExamList();
+            MainPage = new GrantsPage();
         }
 
         protected override void OnStart()

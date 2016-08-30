@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using LKStudent.Droid;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 [assembly: Xamarin.Forms.Dependency(typeof(SaveAndLoad))]
 namespace LKStudent.Droid
