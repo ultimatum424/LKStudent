@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LKStudent.InfoStudent"
+             BackgroundColor="White">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <StackLayout >
+    <Label Text="Сведения обо мне" TextColor="Black" FontSize="15" FontAttributes="Bold"/>
+    
+    <Label Text="ФИО" TextColor="Gray"/>
+    <Label x:Name="FioField" TextColor="Black"/>
+    
+    <Label Text="Номер зачётной книжки" TextColor="Gray"/>
+    <Label x:Name="NumberStudentFill" TextColor="Black"/>
+       
+    <Label Text="Факультет (институт)" TextColor="Gray"/>
+    <Label x:Name="DepartmentFill" TextColor="Black"/>
+    
+    <Label Text="Направление (специальность)" TextColor="Gray"/>
+    <Label x:Name="SpecialtyFill" TextColor="Black"/>
+    
+    <Label Text="Профиль" TextColor="Gray"/>
+    <Label x:Name="ProfileFill" TextColor="Black"/>
+    
+    <Label Text="Курс" TextColor="Gray"/>
+    <Label x:Name="CourseFill" TextColor="Black"/>
+    
+    <Label Text="Группа" TextColor="Gray"/>
+    <Label x:Name="GroupFill" TextColor="Black"/>
+    
+    <Label Text="Акдемический Статус" TextColor="Gray"/>
+    <Label x:Name="AcademicStatusFill" TextColor="Gray"/>
+   
+  
+    
+  </StackLayout>
+</ContentPage>

@@ -40,9 +40,13 @@
     <Compile Include="ExamList.xaml.cs">
       <DependentUpon>ExamList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InfoStudent.xaml.cs">
+      <DependentUpon>InfoStudent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ISaveAndLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetJsToUrl.cs" />
+    <Compile Include="StudentInfoJS.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -68,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ExamList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InfoStudent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
