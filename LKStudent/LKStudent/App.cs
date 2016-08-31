@@ -12,7 +12,7 @@ namespace LKStudent
         public App()
         {
             // The root page of your application
-            MainPage = new ExamList();
+            MainPage = new StudentInfoPage();
 
         }
 
