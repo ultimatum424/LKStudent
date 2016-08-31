@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LKStudent.StudentInfoPage"
+            BackgroundColor="#EBEBEB">
+  <StackLayout>
+    <Label Text="Информация обо мне" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+    <ListView ItemsSource="{StaticResource addInfo}">"
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="5, 0, 5, 0" BackgroundColor="White">
+              <Label Text="{Binding header}" TextColor="Gray"/>
+              <Label Text="{Binding description}" TextColor="Black"/>
+              
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>

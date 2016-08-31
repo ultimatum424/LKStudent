@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -10,6 +11,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 using System.Diagnostics;
+
 
 
 namespace LKStudent
@@ -25,8 +27,7 @@ namespace LKStudent
         {
             try
             {
-                HttpClient client = new HttpClient();
-                //client.BaseAddress = new Uri(ulr_);
+                HttpClient client = new HttpClient();               
                 var response = client.GetAsync(new Uri(ulr_)).Result;
                 response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
 
@@ -36,10 +37,6 @@ namespace LKStudent
             }
             catch (Exception ex)
             {
-
-                Debug.WriteLine("---------------------------------------");
-                Debug.WriteLine(ex.Message);
-                Debug.WriteLine("---------------------------------------");
             }
         }      
           
