@@ -13,7 +13,10 @@ namespace LKStudent
         {
             // The root page of your application
  
-            MainPage = new ExamList();
+            //MainPage = new ExamList();
+            //MainPage = new StudentInfoPage();
+            //MainPage = new GrantsPage();
+            MainPage = new AchievementsPage();
         }
 
         protected override void OnStart()
