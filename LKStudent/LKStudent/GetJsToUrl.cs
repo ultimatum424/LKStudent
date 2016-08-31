@@ -18,7 +18,7 @@ namespace LKStudent
     public class GetJsToUrl
     {
         public GetJsToUrl(string ulr_, string name_)
-        {          
+        {
             LoadData(ulr_, name_);
         }
 
@@ -33,23 +33,16 @@ namespace LKStudent
 
                 // десериализация ответа в формате json
                 var content = await response.Content.ReadAsStringAsync();
-
-                //JObject o = JObject.Parse(content);
-                //var o = JsonObject.Parse(content);
-
-                //var str = o.SelectToken(@"Model.[0]");
-                Debug.WriteLine(content.ToString());
-                Debug.WriteLine("----------------");
-                //Debug.WriteLine(o.ToString());
-
                 DependencyService.Get<ISaveAndLoad>().SaveText(name_, content.ToString());
             }
             catch (Exception ex)
             {
+
                 Debug.WriteLine("---------------------------------------");
                 Debug.WriteLine(ex.Message);
                 Debug.WriteLine("---------------------------------------");
             }
         }      
+          
     }
 }
