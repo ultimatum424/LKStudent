@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LKStudent.GrantsPage">
-  
+
   <StackLayout Spacing="20" BackgroundColor="#EBEBEB" Padding="20, 20, 20, 20">
     <Label Text="Мои текущие достижения" FontSize="Large" TextColor="Black"/>
 
@@ -24,7 +24,7 @@
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-    
+
   </StackLayout>
-  
+
 </ContentPage>

@@ -11,7 +11,6 @@ using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 using System.Diagnostics;
 
-using System.Json;
 
 namespace LKStudent
 {

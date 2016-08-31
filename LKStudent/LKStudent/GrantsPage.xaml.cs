@@ -14,7 +14,7 @@ namespace LKStudent
     public partial class GrantsPage : ContentPage
     {
         private const string grantsJsonUrl = "https://test-lks.volgatech.net/Grants/GetGrantsLogsJSON";
-        private const string jsonGrantsLocalName = "dfgdfg.txt";
+        private const string jsonGrantsLocalName = "grants.txt";
 
         GetJsToUrl jsonLocalGrants;
         List<GrantsData> grants;
