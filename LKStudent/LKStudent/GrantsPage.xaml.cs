@@ -14,9 +14,8 @@ namespace LKStudent
     public partial class GrantsPage : ContentPage
     {
         private const string grantsJsonUrl = "https://test-lks.volgatech.net/Grants/GetGrantsLogsJSON";
-        private const string jsonGrantsLocalName = "dfgdfg.txt";
+        private const string jsonGrantsLocalName = "grantsData.json";
 
-        GetJsToUrl jsonLocalGrants;
         List<GrantsData> grants;
 
         public GrantsPage()
@@ -24,11 +23,16 @@ namespace LKStudent
             Resources = new Xamarin.Forms.ResourceDictionary();
             grants = new List<GrantsData>();
 
-            jsonLocalGrants = new GetJsToUrl(grantsJsonUrl, jsonGrantsLocalName);
+            LoadGrantsDataFromJson();
+
+            InitializeComponent();
+        }
+
+        private void LoadGrantsDataFromJson()
+        {
+            GetJsToUrl jsonLocalGrants = new GetJsToUrl(grantsJsonUrl, jsonGrantsLocalName);
 
             string localJsonGrants = DependencyService.Get<ISaveAndLoad>().LoadText(jsonGrantsLocalName);
-            Debug.WriteLine(localJsonGrants);
-            //var deserializedJsonGrants = JsonConvert.DeserializeObject<ListGrantsJson>(localJsonGrants);
             var deserializedJsonGrants = JsonConvert.DeserializeObject<List<GrantsData>>(localJsonGrants);
 
             for (int i = 0; i < deserializedJsonGrants.Count; i++)
@@ -37,8 +41,8 @@ namespace LKStudent
             }
 
             Resources.Add("grants", grants);
-
-            InitializeComponent();
         }
+
+
     }
 }
