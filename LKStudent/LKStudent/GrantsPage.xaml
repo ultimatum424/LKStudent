@@ -2,29 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LKStudent.GrantsPage">
-
-  <StackLayout Spacing="20" BackgroundColor="#EBEBEB" Padding="20, 20, 20, 20">
-    <Label Text="Мои текущие достижения" FontSize="Large" TextColor="Black"/>
+  
+  <StackLayout Spacing="30" BackgroundColor="#EBEBEB" Padding="20, 20, 20, 20">
+    <Label Text="Мои стипендии" FontSize="Large" TextColor="Black"/>
 
     <ListView ItemsSource="{StaticResource grants}">
       <ListView.Header>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="Gray" Padding="5, 5, 5, 5">
-          <Label Text="Стипендия" FontSize="Small" TextColor="Black" HorizontalOptions="StartAndExpand"/>
-          <Label Text="Сумма" FontSize="Small" TextColor="Black" HorizontalOptions="EndAndExpand"/>
+        <StackLayout Orientation="Horizontal" BackgroundColor="#355480" Padding="5, 5, 5, 5">
+          <Label Text="Стипендия" HorizontalOptions="StartAndExpand" FontSize="Small" TextColor="White"/>
+          <Label Text="Сумма" HorizontalOptions="EndAndExpand" FontSize="Small" TextColor="White"/>
         </StackLayout>
       </ListView.Header>
       <ListView.ItemTemplate>
         <DataTemplate>
-          <ViewCell>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" BackgroundColor="{Binding rowColor}" Padding="5, 0, 5, 0">
-              <Label Text="{Binding Name}" FontSize="Small" TextColor="Black" HorizontalOptions="Start"/>
-              <Label Text="{Binding Cost}" FontSize="Small" TextColor="Black" HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
+          <ViewCell>  
+            <Grid BackgroundColor="White" ColumnSpacing="2" RowSpacing="2" >
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="20*"/>
+              </Grid.ColumnDefinitions>
+              <Label BackgroundColor="Red" Text="{Binding Name}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+              <Label BackgroundColor="Red" Text="{Binding Cost}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+            </Grid>
+          
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-
+    
+   
   </StackLayout>
-
+   
 </ContentPage>
