@@ -24,8 +24,8 @@
                   <ColumnDefinition Width="80*"/>
                   <ColumnDefinition Width="20*"/>
               </Grid.ColumnDefinitions>
-              <Label BackgroundColor="Red" Text="{Binding Name}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
-              <Label BackgroundColor="Red" Text="{Binding Cost}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+              <Label BackgroundColor="White" Text="{Binding Name}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+              <Label BackgroundColor="White" Text="{Binding Cost}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
             </Grid>
           
           </ViewCell>

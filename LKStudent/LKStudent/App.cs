@@ -15,8 +15,8 @@ namespace LKStudent
  
             //MainPage = new ExamList();
             //MainPage = new StudentInfoPage();
-            //MainPage = new GrantsPage();
-            MainPage = new AchievementsPage();
+            MainPage = new GrantsPage();
+            //MainPage = new AchievementsPage();
         }
 
         protected override void OnStart()
