@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using LKStudent.Pages;
 using Xamarin.Forms;
 
 namespace LKStudent
@@ -12,11 +12,12 @@ namespace LKStudent
         public App()
         {
             // The root page of your application
- 
+
             //MainPage = new ExamList();
             //MainPage = new StudentInfoPage();
-            MainPage = new GrantsPage();
+            //MainPage = new GrantsPage();
             //MainPage = new AchievementsPage();
+            MainPage = new NavigationPage(new MenuPage());
         }
 
         protected override void OnStart()

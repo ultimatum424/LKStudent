@@ -35,24 +35,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AchievementData.cs" />
-    <Compile Include="AchievementsPage.xaml.cs">
+    <Compile Include="JsonClass\AchievementData.cs" />
+    <Compile Include="JsonClass\MasterPageItem.cs" />
+    <Compile Include="Pages\AchievementsPage.xaml.cs">
       <DependentUpon>AchievementsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.cs" />
-    <Compile Include="ExamJS.cs" />
-    <Compile Include="ExamList.xaml.cs">
+    <Compile Include="JsonClass\ExamJS.cs" />
+    <Compile Include="Pages\ExamList.xaml.cs">
       <DependentUpon>ExamList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GrantsJS.cs" />
-    <Compile Include="GrantsPage.xaml.cs">
+    <Compile Include="JsonClass\GrantsJS.cs" />
+    <Compile Include="Pages\GrantsPage.xaml.cs">
       <DependentUpon>GrantsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ISaveAndLoad.cs" />
+    <Compile Include="Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GetJsToUrl.cs" />
-    <Compile Include="StudentInfoJS.cs" />
-    <Compile Include="StudentInfoPage.xaml.cs">
+    <Compile Include="JsonClass\StudentInfoJS.cs" />
+    <Compile Include="Pages\StudentInfoPage.xaml.cs">
       <DependentUpon>StudentInfoPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -84,25 +88,31 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ExamList.xaml">
+    <EmbeddedResource Include="Pages\ExamList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="StudentInfoPage.xaml">
+    <EmbeddedResource Include="Pages\StudentInfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AchievementsPage.xaml">
+    <EmbeddedResource Include="Pages\AchievementsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GrantsPage.xaml">
+    <EmbeddedResource Include="Pages\GrantsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

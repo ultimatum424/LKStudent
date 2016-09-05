@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LKStudent.Pages.MenuPage"
+             xmlns:local="clr-namespace:LKStudent;assembly=LKStudent">
+  <MasterDetailPage.Master>
+    <ContentPage BackgroundColor="Gray" Title="Меню" x:Name="masterPage">    
+       <StackLayout Orientation="Vertical">
+         <ListView ItemTapped="ListView_OnItemTapped" ItemsSource="{StaticResource resurs}" x:Name="ListMenu">
+           <ListView.ItemTemplate>
+             <DataTemplate>
+               <ViewCell>
+                 <Label Text="{Binding Text}" TextColor="Red" FontSize="30" BackgroundColor="Green"/>
+                 <Label Text="{Binding Text}" TextColor="Red" FontSize="30" BackgroundColor="Green"/>
+                 <Label Text="{Binding Text}" TextColor="Red" FontSize="30" BackgroundColor="Green"/>
+                 <Label Text="{Binding Text}" TextColor="Red" FontSize="30" BackgroundColor="Green"/>
+               </ViewCell>
+             </DataTemplate>
+           </ListView.ItemTemplate>
+         </ListView>
+        </StackLayout>
+      </ContentPage>
+  </MasterDetailPage.Master>
+
+  <MasterDetailPage.Detail>
+    <local:StudentInfoPage/>
+  </MasterDetailPage.Detail>
+
+
+  </MasterDetailPage>
