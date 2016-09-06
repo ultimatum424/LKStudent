@@ -12,6 +12,8 @@ namespace LKStudent.Pages
     {
         public MenuPage()
         {
+            
+            Detail = new NavigationPage(new StudentInfoPage());
             Resources = new Xamarin.Forms.ResourceDictionary();
             var res = new List<MasterPageItem>();
            
@@ -21,8 +23,7 @@ namespace LKStudent.Pages
             res.Add(CreatItem("Достижения", typeof(AchievementsPage)));
             Resources.Add("resurs", res);
             InitializeComponent();
-                
-           
+             
         }
 
         private MasterPageItem CreatItem(string text, Type type)
@@ -38,16 +39,29 @@ namespace LKStudent.Pages
             var item = (MasterPageItem) e.Item;
             if (item != null)
             {
-                //Detail = new AchievementsPage();
-                     
-                object q = Activator.CreateInstance(item.TargetType);
-                Detail = (Page) q;
-                //Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                Page displayPage = (Page)Activator.CreateInstance(item.TargetType);
+                Detail = displayPage;
                 IsPresented = false;
                 ListMenu.SelectedItem = null;
+                
             }
 
         }
     }
     //Android only allows one navigation page on screen at a time
+
+/* <ContentPage BackgroundColor="White" Title="Меню" x:Name="masterPage">    
+   <StackLayout Orientation="Vertical">
+     <ListView ItemTapped="ListView_OnItemTapped" ItemsSource="{StaticResource resurs}" x:Name="ListMenu">
+       <ListView.ItemTemplate>
+         <DataTemplate>
+           <ViewCell>
+             <Label Text="{Binding Text}" TextColor="Black" FontSize="20"/>
+           </ViewCell>
+         </DataTemplate>
+       </ListView.ItemTemplate>
+     </ListView>
+    </StackLayout>
+  </ContentPage>
+  */
 }

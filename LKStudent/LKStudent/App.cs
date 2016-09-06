@@ -17,6 +17,8 @@ namespace LKStudent
             //MainPage = new StudentInfoPage();
             //MainPage = new GrantsPage();
             //MainPage = new AchievementsPage();
+            
+            //NavigationPage.SetHasNavigationBar(this, false);
             MainPage = new NavigationPage(new MenuPage());
         }
 
