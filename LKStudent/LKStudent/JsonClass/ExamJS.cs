@@ -9,8 +9,7 @@ namespace LKStudent
     class ExamJS
     {
         public string SubjectName { get; set; }
-        public string subjectKafedra { get; set; }
-        public string Kafedra { get; set; }
+        public DateTime ExamDate { get; set; }
         public string Location { get; set; }
         public string FIO { get; set; }
     }

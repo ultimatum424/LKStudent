@@ -12,23 +12,19 @@
           <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Vertical" Padding ="15" BackgroundColor="White">
               <StackLayout Orientation="Horizontal">
-                <Label Text="ID: " Font="Large" TextColor="Black"/>
-                <Label Text="{Binding Id}" Font="Large" TextColor="Black"/>
-              </StackLayout>
-              <StackLayout Orientation="Horizontal">
-                <Label Text="Область: " TextColor="Black"/>
+                <Label Text="Область: " TextColor="Gray"/>
                 <Label Text="{Binding Name}" TextColor="Black"/>
               </StackLayout>
               <StackLayout Orientation="Horizontal">
-                <Label Text="Критерии: " TextColor="Black"/>
+                <Label Text="Критерии: " TextColor="Gray"/>
                 <Label Text="{Binding SubName}" TextColor="Black"/>
               </StackLayout>
               <StackLayout Orientation="Horizontal">
-                <Label Text="Баллы: " TextColor="Black"/>
+                <Label Text="Баллы: " TextColor="Gray"/>
                 <Label Text= "{Binding Mark}" TextColor="Black"/>
               </StackLayout>
               <StackLayout Orientation="Horizontal">
-                <Label Text="Дата начала: " TextColor="Black"/>
+                <Label Text="Дата начала: " TextColor="Gray"/>
                 <Label Text="{Binding DateStart}" TextColor="Black"/>
               </StackLayout>
             </StackLayout>

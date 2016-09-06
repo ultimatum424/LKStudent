@@ -4,13 +4,18 @@
              x:Class="LKStudent.Pages.MenuPage"
              xmlns:local="clr-namespace:LKStudent;assembly=LKStudent">
   <MasterDetailPage.Master>
-    <ContentPage BackgroundColor="White" Title="Меню" x:Name="masterPage">    
+    <ContentPage BackgroundColor="Gray" Title="Меню" x:Name="masterPage">    
        <StackLayout Orientation="Vertical">
-         <ListView ItemTapped="ListView_OnItemTapped" ItemsSource="{StaticResource resurs}" x:Name="ListMenu">
+         <ListView ItemTapped="ListView_OnItemTapped" 
+                   ItemsSource="{StaticResource resurs}" 
+                   x:Name="ListMenu"
+                   SeparatorColor="Silver"
+                   >
+           
            <ListView.ItemTemplate>
              <DataTemplate>
                <ViewCell>
-                 <Label Text="{Binding Text}" TextColor="Black" FontSize="20"/>
+                 <Label Text="{Binding Text}" TextColor="White" FontSize="20"/>
                </ViewCell>
              </DataTemplate>
            </ListView.ItemTemplate>

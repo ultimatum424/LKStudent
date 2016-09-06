@@ -12,15 +12,29 @@
              TextColor="Black"/>
       <Picker x:Name="PickerSelectSemester"
               BackgroundColor="Gray"
-              Title="Выберете семестр"
+              Title="Текущий семестр"
               VerticalOptions="Center"
               HorizontalOptions="Center"
               SelectedIndexChanged="PickerSelectSemester_OnSelectedIndexChanged">
         <Picker.Items>
         </Picker.Items>
       </Picker>
-      <StackLayout x:Name="ExamStack">
-      </StackLayout>
+        <ListView RowHeight="120" ItemsSource="{StaticResource ExamItems}">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>              
+                <StackLayout Orientation="Vertical" 
+                             BackgroundColor="White"
+                             Padding="15">
+                  <Label Text="{Binding SubjectName}" TextColor="Black" FontAttributes="Bold"/>
+                  <Label Text="{Binding ExamDate}" TextColor="Black"/>
+                  <Label Text="{Binding Location}" TextColor="Black"/>
+                  <Label Text="{Binding FIO}" TextColor="Black"/>              
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
 
     </StackLayout>
   </ScrollView>

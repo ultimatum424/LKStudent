@@ -20,8 +20,8 @@ namespace LKStudent
             modelStudent = new List<ViewModelStudent>();
             
             jsInfoStudent = new GetJsToUrl(url, name);
-            var localJsonGrants = DependencyService.Get<ISaveAndLoad>().LoadText(name);
-            var deserializedJsonInfoStudent = JsonConvert.DeserializeObject<StudentInfoJS>(localJsonGrants);
+            var localJson = DependencyService.Get<ISaveAndLoad>().LoadText(name);
+            var deserializedJsonInfoStudent = JsonConvert.DeserializeObject<StudentInfoJS>(localJson);
             
 
             modelStudent.Add(ConvertStudentInfo("ФИО", deserializedJsonInfoStudent.Fio));

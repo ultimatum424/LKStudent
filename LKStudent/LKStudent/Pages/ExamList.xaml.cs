@@ -13,16 +13,29 @@ namespace LKStudent
         GetJsToUrl jsToUrl;
         string url = "https://test-lks.volgatech.net/ExamList/ExamListCurrentJSON";
         private string name = "js414424255.js";
+
+        
         public ExamList()
         {
-
+            Resources = new Xamarin.Forms.ResourceDictionary();
+            
             jsToUrl = new GetJsToUrl(url, name);
+            Resources.Clear();
+            var localJson = DependencyService.Get<ISaveAndLoad>().LoadText(name);
+            var deserializedJson = JsonConvert.DeserializeObject<List<ExamJS>>(localJson);
+            Resources.Add("ExamItems", deserializedJson);
             InitializeComponent();
             
             PickerSelectSemester.Items.Add("1 семестр");
             PickerSelectSemester.Items.Add("2 семестр");
+            PickerSelectSemester.Items.Add("3 семестр");
+            PickerSelectSemester.Items.Add("4 семестр");
+
         }
 
+        
+        
+        /*
         private void AddLabelExam(string text, bool isBold)
         {
             if (isBold)
@@ -43,23 +56,15 @@ namespace LKStudent
                     TextColor = Color.Black,
                 });
             }
-        }
+        }*/
 
         private void PickerSelectSemester_OnSelectedIndexChanged(object sender, EventArgs e)
-        {           
-            ExamStack.Children.Clear();
-            this.BindingContext = jsToUrl;
-            string sToken = DependencyService.Get<ISaveAndLoad>().LoadText(name);
-            var rateInfo = JsonConvert.DeserializeObject<ListExamJs>(sToken);
-            for (int i = 0; i < rateInfo.Model.Count; i++)
-            {
-                AddLabelExam(rateInfo.Model[i].SubjectName, true);
-                AddLabelExam(rateInfo.Model[i].subjectKafedra, false);
-                AddLabelExam(rateInfo.Model[i].Location, false);
-                AddLabelExam(rateInfo.Model[i].FIO, false);
-                AddLabelExam("", false);
-            }
-
+        {
+          
+            Resources.Clear();
+            var localJson = DependencyService.Get<ISaveAndLoad>().LoadText(name);
+            var deserializedJson = JsonConvert.DeserializeObject<List<ExamJS>>(localJson);
+            Resources.Add("ExamItems", deserializedJson);
         }
     }
 }
