@@ -1,22 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LKStudent.GrantsPage">
   
-  <StackLayout Spacing="30" BackgroundColor="#EBEBEB" Padding="20, 20, 20, 20">
-    <Label Text="Мои стипендии" FontSize="Large" TextColor="Black"/>
-
-    <ListView ItemsSource="{StaticResource grants}">
-      <ListView.Header>
-        <StackLayout Orientation="Horizontal" BackgroundColor="#355480" Padding="5, 5, 5, 5">
-          <Label Text="Стипендия" HorizontalOptions="StartAndExpand" FontSize="Small" TextColor="White"/>
-          <Label Text="Сумма" HorizontalOptions="EndAndExpand" FontSize="Small" TextColor="White"/>
-        </StackLayout>
-      </ListView.Header>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>  
-            <Grid BackgroundColor="White" ColumnSpacing="2" RowSpacing="2" >
+  <TabbedPage.Children>
+    <ContentPage Title="Мои стипендии"> 
+      <StackLayout BackgroundColor="#EBEBEB" Padding="10, 20, 10, 10">
+        
+        <Grid BackgroundColor="Blue" ColumnSpacing="2" RowSpacing="2" Padding="5, 5, 5, 5">
               <Grid.RowDefinitions>
                   <RowDefinition Height="Auto"/>
               </Grid.RowDefinitions>
@@ -24,16 +15,79 @@
                   <ColumnDefinition Width="80*"/>
                   <ColumnDefinition Width="20*"/>
               </Grid.ColumnDefinitions>
-              <Label BackgroundColor="Red" Text="{Binding Name}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
-              <Label BackgroundColor="Red" Text="{Binding Cost}" VerticalOptions="CenterAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
-            </Grid>
+              <Label Text="Стипендия" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+              <Label Text="Сумма" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+        </Grid>
           
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
+        <ListView ItemsSource="{StaticResource grants}" SeparatorVisibility="Default" SeparatorColor="#355480" IsPullToRefreshEnabled="True" IsRefreshing="{Binding IsGrantsRefreshing, Mode=OneWay}" Refreshing="RefreshGrants">
+          <ListView.ItemTemplate BackgroundColor="Yellow">
+            <DataTemplate>
+              <ViewCell>  
+            
+                <Grid BackgroundColor="White" ColumnSpacing="2" RowSpacing="2" Padding="5, 0, 0, 0">
+                  <Grid.RowDefinitions>
+                      <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="80*"/>
+                      <ColumnDefinition Width="20*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Text="{Binding Name}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+                  <Label Text="{Binding Cost}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+                </Grid>
+            
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      
+      </StackLayout>  
     
+      </ContentPage>  
+      
+    
+      
+      <ContentPage Title="Претендант"> 
+        <StackLayout BackgroundColor="#EBEBEB" Padding="10, 20, 10, 10">
+            
+        <Grid BackgroundColor="Blue" ColumnSpacing="2" RowSpacing="2" Padding="5, 5, 5, 5">
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="80*"/>
+                  <ColumnDefinition Width="20*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="Стипендия" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+              <Label Text="Категория" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+        </Grid>
+            
+        <ListView ItemsSource="{StaticResource grantsPretendant}" SeparatorVisibility="Default" SeparatorColor="#355480">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>  
+            
+                <Grid BackgroundColor="White" ColumnSpacing="2" RowSpacing="2" Padding="5, 0, 0, 0">
+                  <Grid.RowDefinitions>
+                      <RowDefinition Height="Auto"/>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="60*"/>
+                      <ColumnDefinition Width="40*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Text="{Binding Name}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+                  <Label Text="{Binding Category}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+                </Grid>
+          
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      
+      </StackLayout>  
+    
+      </ContentPage>  
+  
+  </TabbedPage.Children>
    
-  </StackLayout>
-   
-</ContentPage>
+</TabbedPage>
