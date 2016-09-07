@@ -13,8 +13,8 @@ namespace LKStudent
         public string Name { get; set; }
         public string SubName { get; set; }
         public float Mark { get; set; }
-        public string DateStart { get; set; }
-        public string DateEnd { get; set; }
+        public DateTime DateStart { get; set; }
+        public DateTime DateEnd { get; set; }
         public bool HasScan { get; set; }
         public string FullName { get; set; }
     }

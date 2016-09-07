@@ -14,6 +14,8 @@ namespace LKStudent
         string url = "https://test-lks.volgatech.net/Grants/GetGrantsWorksJSON/";
         private string name = "GetGrantsWorksJSON.json";
         List<AchievementData> achievementList;
+        public float points = 0;
+
         public AchievementsPage()
         {
             jsToUrl = new GetJsToUrl(url, name);
@@ -24,6 +26,19 @@ namespace LKStudent
 
             InitializeComponent();
             MainListView.ItemsSource = achievementList;
+            points = CalculateAchievementPoints();
+            Resources = new Xamarin.Forms.ResourceDictionary();
+            Resources.Add("points", points);
+        }
+
+        private float CalculateAchievementPoints()
+        {
+            float result = 0;
+            foreach (var achievement in achievementList)
+            {
+                result += achievement.Mark;
+            }
+            return result;
         }
     }
 }
