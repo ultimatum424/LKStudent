@@ -4,7 +4,6 @@
              x:Class="LKStudent.AchievementsPage">
   
   <StackLayout Orientation="Vertical" Padding ="15" BackgroundColor="White">
-    <Label Text="Достижения" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black" BackgroundColor="White"/>
     <StackLayout Orientation="Horizontal">
       <Label Text="Текущие баллы: 275" TextColor="Gray" BackgroundColor="White"/>
       <Label Text="{Binding points}" TextColor="Black" BackgroundColor="White"/>

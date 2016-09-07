@@ -17,10 +17,10 @@ namespace LKStudent.Pages
             Resources = new Xamarin.Forms.ResourceDictionary();
             var res = new List<MasterPageItem>();
            
-            res.Add(CreatItem("Инфо", typeof(StudentInfoPage)));
-            res.Add(CreatItem("Экзамены", typeof(ExamList)));
-            res.Add(CreatItem("Стипендия", typeof(GrantsPage)));
-            res.Add(CreatItem("Достижения", typeof(AchievementsPage)));
+            res.Add(CreatItem("Моя страница", typeof(StudentInfoPage)));
+            res.Add(CreatItem("Расписание экзаменов", typeof(ExamList)));
+            res.Add(CreatItem("Мои стипендии", typeof(GrantsPage)));
+            res.Add(CreatItem("Мои достижения", typeof(AchievementsPage)));
             Resources.Add("resurs", res);
             InitializeComponent();
              
