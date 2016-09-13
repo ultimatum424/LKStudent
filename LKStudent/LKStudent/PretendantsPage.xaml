@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LKStudent.PretendantsPage"
+             BackgroundColor="White">
+  
+  <AbsoluteLayout x:Name="mainStack" BackgroundColor="Blue" Padding="0, 5, 0, 0">
+    <Grid ColumnSpacing="2" RowSpacing="2" Padding="5, 5, 5, 5" AbsoluteLayout.LayoutBounds="0.5,0,1,0.05" AbsoluteLayout.LayoutFlags="All">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="60*"/>
+        <ColumnDefinition Width="40*"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Стипендия" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="White" Grid.Column="0"/>
+      <Label Text="Категория" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="White" Grid.Column="1"/>
+    </Grid>
+
+    <ListView x:Name="listq" BackgroundColor="White" ItemsSource="{StaticResource grantsPretendant}" SeparatorVisibility="Default" SeparatorColor="#355480"
+              AbsoluteLayout.LayoutBounds="0.5,1,1,0.95" AbsoluteLayout.LayoutFlags="All">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+
+            <Grid ColumnSpacing="2" RowSpacing="2" Padding="5, 0, 0, 0">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="100*"/>
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="40*"/>
+              </Grid.ColumnDefinitions>
+              <Label Text="{Binding Name}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+              <Label Text="{Binding Category}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+            </Grid>
+
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+  </AbsoluteLayout>
+
+</ContentPage>
