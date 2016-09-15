@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LKStudent.Pages.SocialDocumentsPage">
+  <ScrollView>
+     <StackLayout Orientation="Vertical" Padding ="15" BackgroundColor="White">
+      <ListView x:Name="SocialDocuments"
+            HasUnevenRows="True">
+    <ListView.Header>        
+          <Grid BackgroundColor="Blue" ColumnSpacing="2" RowSpacing="2" Padding="5, 5, 5, 5">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+          </Grid.ColumnDefinitions>
+          <Label Text="Категория" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
+          <Label Text="Период назначения" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
+        </Grid>
+    </ListView.Header>
+    <ListView.ItemTemplate>
+      <DataTemplate>
+         <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" BackgroundColor="White">
+                  <Label Text="{Binding Category}" TextColor="Black" HorizontalOptions="Start"/>                                              
+                  <Label Text="{Binding GrantPeriod}" TextColor="Black" HorizontalOptions="EndAndExpand"/>                
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+  </ListView>
+  </StackLayout>
+  </ScrollView>
+ 
+</ContentPage>
