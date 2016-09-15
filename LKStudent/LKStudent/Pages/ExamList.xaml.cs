@@ -30,37 +30,12 @@ namespace LKStudent
             PickerSelectSemester.Items.Add("2 семестр");
             PickerSelectSemester.Items.Add("3 семестр");
             PickerSelectSemester.Items.Add("4 семестр");
-
         }
 
         
-        
-        /*
-        private void AddLabelExam(string text, bool isBold)
-        {
-            if (isBold)
-            {
-                ExamStack.Children.Add(new Label
-                {
-                    Text = text,
-                    TextColor = Color.Black,
-                    FontAttributes = FontAttributes.Bold,
-                    FontSize = 20
-                });
-            }
-            else
-            {
-                ExamStack.Children.Add(new Label
-                {
-                    Text = text,
-                    TextColor = Color.Black,
-                });
-            }
-        }*/
-
         private void PickerSelectSemester_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-          
+            
             Resources.Clear();
             var localJson = DependencyService.Get<ISaveAndLoad>().LoadText(name);
             var deserializedJson = JsonConvert.DeserializeObject<List<ExamJS>>(localJson);

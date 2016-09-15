@@ -21,6 +21,7 @@ namespace LKStudent.Pages
             res.Add(CreatItem("Расписание экзаменов", typeof(ExamList)));
             res.Add(CreatItem("Мои стипендии", typeof(GrantsPage)));
             res.Add(CreatItem("Мои достижения", typeof(AchievementsPage)));
+            res.Add(CreatItem("Мои социальные стипендии", typeof(SocialDocumentsPage)));
             Resources.Add("resurs", res);
             InitializeComponent();
              
@@ -28,10 +29,10 @@ namespace LKStudent.Pages
 
         private MasterPageItem CreatItem(string text, Type type)
         {
-            var temp = new MasterPageItem();
-            temp.TargetType = type;
-            temp.Text = text;
-            return temp;
+            var pageItem = new MasterPageItem();
+            pageItem.TargetType = type;
+            pageItem.Text = text;
+            return pageItem;
         }
 
         private void ListView_OnItemTapped(object sender, ItemTappedEventArgs e)
@@ -45,23 +46,6 @@ namespace LKStudent.Pages
                 ListMenu.SelectedItem = null;
                 
             }
-
         }
     }
-    //Android only allows one navigation page on screen at a time
-
-/* <ContentPage BackgroundColor="White" Title="Меню" x:Name="masterPage">    
-   <StackLayout Orientation="Vertical">
-     <ListView ItemTapped="ListView_OnItemTapped" ItemsSource="{StaticResource resurs}" x:Name="ListMenu">
-       <ListView.ItemTemplate>
-         <DataTemplate>
-           <ViewCell>
-             <Label Text="{Binding Text}" TextColor="Black" FontSize="20"/>
-           </ViewCell>
-         </DataTemplate>
-       </ListView.ItemTemplate>
-     </ListView>
-    </StackLayout>
-  </ContentPage>
-  */
 }

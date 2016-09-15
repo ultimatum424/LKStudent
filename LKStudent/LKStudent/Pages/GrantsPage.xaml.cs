@@ -21,7 +21,6 @@ namespace LKStudent
 
         List<GrantsData> grants;
         List<GrantsPretendantData> grantsPretendant;
-        bool IsGrantsRefreshing;
 
         public GrantsPage()
         {

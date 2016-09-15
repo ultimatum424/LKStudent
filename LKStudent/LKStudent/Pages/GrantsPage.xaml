@@ -78,7 +78,6 @@
                   <Label Text="{Binding Name}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="0"/>
                   <Label Text="{Binding Category}" VerticalOptions="FillAndExpand" FontSize="Small" TextColor="Black" Grid.Column="1"/>
                 </Grid>
-
               </ViewCell>
             </DataTemplate>
           </ListView.ItemTemplate>

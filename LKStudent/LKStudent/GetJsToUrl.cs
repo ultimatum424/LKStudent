@@ -10,7 +10,6 @@ using System.Windows.Input;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
-using System.Diagnostics;
 
 
 

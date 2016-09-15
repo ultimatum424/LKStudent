@@ -3,16 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LKStudent.StudentInfoPage"
             BackgroundColor="#EBEBEB">
-  <StackLayout>
+  <StackLayout Padding="5">
     <Label Text="Информация обо мне" FontSize="Large" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
     <ListView ItemsSource="{StaticResource addInfo}">"
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <StackLayout Orientation="Vertical" Padding="5, 0, 5, 0" BackgroundColor="White">
+            <StackLayout Orientation="Vertical" BackgroundColor="White" Padding="5, 0, 0, 0">
               <Label Text="{Binding header}" TextColor="Gray"/>
               <Label Text="{Binding description}" TextColor="Black"/>
-              
+            
             </StackLayout>
           </ViewCell>
         </DataTemplate>
